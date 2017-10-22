@@ -228,7 +228,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
 
     @Override
     public void onDismiss(final DialogInterface dialog){
-        //Toast.makeText(this, "dialog gone", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "dialog gone", Toast.LENGTH_LONG).show();
 
         Intent goToLeaderboardIntent = new Intent(getApplicationContext(), LBActivity.class);
         goToLeaderboardIntent.putExtra("winner", potentialWinner);
