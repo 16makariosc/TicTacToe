@@ -6,4 +6,6 @@
     <string name="player2hint">Enter Player 2</string>
     <string name="wonDialog">Won!</string>
     <string name="lostButton">Lost!</string>
+    <string name="tie">You both tied!</string>
+    <string name="tieDialog">How does one win at tictactoe anyways?</string>
 </resources>

@@ -26,6 +26,9 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
     String potentialWinner;
     String potentialLoser;
 
+    Boolean tie;
+    int turnsTaken;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +40,9 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
 
         p1 = (EditText) findViewById(R.id.player1name);
         p2 = (EditText) findViewById(R.id.player2name);
+
+        tie = false;
+        turnsTaken = 0;
 
         final ImageView i11 = (ImageView) findViewById(R.id.i11);
         final ImageView i21 = (ImageView) findViewById(R.id.i21);
@@ -56,6 +62,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
                     updateWinTable("r1");
                     updateWinTable("c1");
                     updateWinTable("d1");
+                    checkForTie();
                     isPlayer1Turn = !isPlayer1Turn;
                 }
             }
@@ -68,6 +75,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
                 if (setSquare(i21)) {
                     updateWinTable("r1");
                     updateWinTable("c2");
+                    checkForTie();
                     isPlayer1Turn = !isPlayer1Turn;
                 }
             }
@@ -81,6 +89,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
                     updateWinTable("r1");
                     updateWinTable("c3");
                     updateWinTable("d2");
+                    checkForTie();
                     isPlayer1Turn = !isPlayer1Turn;
                 }
             }
@@ -93,6 +102,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
                 if (setSquare(i12)){
                     updateWinTable("r2");
                     updateWinTable("c1");
+                    checkForTie();
                     isPlayer1Turn = !isPlayer1Turn;
                 }
             }
@@ -107,6 +117,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
                     updateWinTable("c2");
                     updateWinTable("d1");
                     updateWinTable("d2");
+                    checkForTie();
                     isPlayer1Turn = !isPlayer1Turn;
                 }
             }
@@ -119,6 +130,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
                 if (setSquare(i32)){
                     updateWinTable("r2");
                     updateWinTable("c3");
+                    checkForTie();
                     isPlayer1Turn = !isPlayer1Turn;
                 }
             }
@@ -132,6 +144,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
                     updateWinTable("r3");
                     updateWinTable("c1");
                     updateWinTable("d2");
+                    checkForTie();
                     isPlayer1Turn = !isPlayer1Turn;
                 }
             }
@@ -144,6 +157,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
                 if (setSquare(i23)){
                     updateWinTable("r3");
                     updateWinTable("c2");
+                    checkForTie();
                     isPlayer1Turn = !isPlayer1Turn;
                 }
             }
@@ -157,6 +171,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
                     updateWinTable("r3");
                     updateWinTable("c3");
                     updateWinTable("d1");
+                    checkForTie();
                     isPlayer1Turn = !isPlayer1Turn;
                 }
             }
@@ -174,6 +189,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
             } else {
                 iv.setImageResource(R.drawable.o);
             }
+            turnsTaken++;
             return true;
         }
 
@@ -208,8 +224,6 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
             //Toast.makeText(this, "someone just won but idk who", Toast.LENGTH_LONG).show();
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage(potentialWinner + " " + getString(R.string.wonDialog));
-
-
             builder.setNeutralButton(potentialLoser + " " + getString(R.string.lostButton), new DialogInterface.OnClickListener(){
 
                 @Override
@@ -221,19 +235,39 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
             AlertDialog winAlert = builder.create();
             winAlert.setOnDismissListener(this);
             winAlert.show();
+        }
+    }
 
+    void checkForTie(){
+        if (turnsTaken >= 9){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage(getString(R.string.tie));
+            builder.setNeutralButton(getString(R.string.tieDialog), new DialogInterface.OnClickListener(){
 
+                @Override
+                public void onClick(DialogInterface dialog, int id){
+                    dialog.dismiss();
+                }
+            });
+
+            AlertDialog winAlert = builder.create();
+            winAlert.setOnDismissListener(this);
+            winAlert.show();
         }
     }
 
     @Override
     public void onDismiss(final DialogInterface dialog){
-        Toast.makeText(this, "dialog gone", Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "dialog gone", Toast.LENGTH_LONG).show();
 
         Intent goToLeaderboardIntent = new Intent(getApplicationContext(), LBActivity.class);
-        goToLeaderboardIntent.putExtra("winner", potentialWinner);
-        goToLeaderboardIntent.putExtra("loser", potentialLoser);
 
+        if (tie) {
+            goToLeaderboardIntent.putExtra("tie", true);
+        } else {
+            goToLeaderboardIntent.putExtra("winner", potentialWinner);
+            goToLeaderboardIntent.putExtra("loser", potentialLoser);
+        }
         startActivity(goToLeaderboardIntent);
 
     }
