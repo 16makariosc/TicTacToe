@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TicTacToe</string>
+    <string name="startgame">START GAME</string>
+    <string name="leaderboard">LEADERBOARD</string>
+    <string name="player1hint">Enter Player 1</string>
+    <string name="player2hint">Enter Player 2</string>
+    <string name="wonDialog">Won!</string>
+    <string name="lostButton">Lost!</string>
+</resources>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    tools:context="com.cis195calculator.maki.tictactoe.GameActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_above="@+id/playerNames">
+
+        <GridLayout
+            android:layout_width="399px"
+            android:layout_height="399px"
+            android:adjustViewBounds="true"
+
+            android:layout_margin="10dp"
+            android:background="@color/black"
+
+            android:rowCount="3"
+            android:columnCount="3">
+
+            <ImageView
+                android:id="@+id/i11"
+                android:layout_height="133px"
+                android:layout_width="133px"
+                android:layout_marginRight="2px"
+                android:layout_marginBottom="2px"
+                android:background="@color/white"/>
+
+            <ImageView
+                android:id="@+id/i21"
+                android:layout_height="133px"
+                android:layout_width="133px"
+                android:layout_marginRight="2px"
+                android:layout_marginLeft="2px"
+                android:layout_marginBottom="2px"
+                android:background="@color/white"/>
+
+            <ImageView
+                android:id="@+id/i31"
+                android:layout_height="133px"
+                android:layout_width="133px"
+                android:layout_marginLeft="2px"
+                android:layout_marginBottom="2px"
+                android:background="@color/white"/>
+
+            <ImageView
+                android:id="@+id/i12"
+                android:layout_height="133px"
+                android:layout_width="133px"
+                android:layout_marginTop="2px"
+                android:layout_marginRight="2px"
+                android:layout_marginBottom="2px"
+                android:background="@color/white"/>
+
+            <ImageView
+                android:id="@+id/i22"
+                android:layout_height="133px"
+                android:layout_width="133px"
+                android:layout_margin="2px"
+                android:background="@color/white"/>
+
+            <ImageView
+                android:id="@+id/i32"
+                android:layout_height="133px"
+                android:layout_width="133px"
+                android:layout_marginLeft="2px"
+                android:layout_marginTop="2px"
+                android:layout_marginBottom="2px"
+                android:background="@color/white"/>
+
+            <ImageView
+                android:id="@+id/i13"
+                android:layout_height="133px"
+                android:layout_width="133px"
+                android:layout_marginTop="2px"
+                android:layout_marginRight="2px"
+                android:background="@color/white"/>
+
+            <ImageView
+                android:id="@+id/i23"
+                android:layout_height="133px"
+                android:layout_width="133px"
+                android:layout_marginTop="2px"
+                android:layout_marginLeft="2px"
+                android:layout_marginRight="2px"
+                android:background="@color/white"/>
+
+            <ImageView
+                android:id="@+id/i33"
+                android:layout_height="133px"
+                android:layout_width="133px"
+                android:layout_marginTop="2px"
+                android:layout_marginLeft="2px"
+                android:background="@color/white"/>
+
+        </GridLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/playerNames"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        android:weightSum="1">
+        <EditText
+            android:id="@+id/player1name"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_weight="0.43"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/player1hint"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="0.14"
+            android:layout_margin="0dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="35dp"
+            android:text="VS"/>
+
+        <EditText
+            android:id="@+id/player2name"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_weight="0.43"
+            android:hint="@string/player2hint"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

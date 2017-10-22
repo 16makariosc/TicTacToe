@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:gravity="center_horizontal|bottom"
+    tools:context="com.cis195calculator.maki.tictactoe.MainActivity">
+
+    <Button
+        android:id="@+id/start_game"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="17dp"
+        android:text="@string/startgame"/>
+
+    <Button
+        android:id="@+id/leaderboard"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="175dp"
+        android:textSize="17dp"
+        android:text="@string/leaderboard"/>
+
+
+
+
+</LinearLayout>
