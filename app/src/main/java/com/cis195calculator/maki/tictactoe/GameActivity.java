@@ -243,6 +243,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
 
     void checkForTie(){
         if (turnsTaken >= 9 && !gameOver){
+            tie = true;
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage(getString(R.string.tie));
             builder.setNeutralButton(getString(R.string.tieDialog), new DialogInterface.OnClickListener(){
@@ -268,9 +269,12 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
         if (tie) {
             goToLeaderboardIntent.putExtra("tie", true);
         } else {
-            goToLeaderboardIntent.putExtra("winner", potentialWinner);
-            goToLeaderboardIntent.putExtra("loser", potentialLoser);
+            goToLeaderboardIntent.putExtra("tie", false);
         }
+
+        goToLeaderboardIntent.putExtra("winner", potentialWinner);
+        goToLeaderboardIntent.putExtra("loser", potentialLoser);
+        goToLeaderboardIntent.putExtra("parent", "game");
         startActivity(goToLeaderboardIntent);
 
     }

@@ -8,4 +8,5 @@
     <string name="lostButton">Lost!</string>
     <string name="tie">You both tied!</string>
     <string name="tieDialog">How does one win at tictactoe anyways?</string>
+    <string name="deleteLeaderboard">DELETE LEADERBOARD DATA</string>
 </resources>

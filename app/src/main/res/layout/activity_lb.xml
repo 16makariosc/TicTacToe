@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.cis195calculator.maki.tictactoe.LBActivity">
 
+    <ListView
+        android:id="@+id/lblist"
+        android:layout_width="wrap_content"
+        android:layout_height="500dp"
+        android:layout_alignParentTop="true"></ListView>
+    <TextView
+        android:id="@+id/deleteData"
+        android:text="@string/deleteLeaderboard"
+        android:textSize="20dp"
+        android:background="@color/pink"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lblist" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

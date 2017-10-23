@@ -31,6 +31,7 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onClick(View v){
                 Intent leaderboardIntent = new Intent(getApplicationContext(), LBActivity.class);
+                leaderboardIntent.putExtra("parent", "menu");
                 startActivity(leaderboardIntent);
             }
         });
