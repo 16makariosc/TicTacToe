@@ -34,4 +34,11 @@ public class LBActivity extends AppCompatActivity {
         SharedPreferences prefs = this.getSharedPreferences(SCOREFILE, 0);
 
     }
+
+    @Override
+    public void onBackPressed(){
+        Intent goToMenuIntent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(goToMenuIntent);
+    }
+
 }

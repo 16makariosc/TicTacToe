@@ -27,6 +27,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
     String potentialLoser;
 
     Boolean tie;
+    Boolean gameOver;
     int turnsTaken;
 
     @Override
@@ -42,6 +43,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
         p2 = (EditText) findViewById(R.id.player2name);
 
         tie = false;
+        gameOver = false;
         turnsTaken = 0;
 
         final ImageView i11 = (ImageView) findViewById(R.id.i11);
@@ -222,6 +224,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
 
         if (copy.get(winRowId) >= 3) {
             //Toast.makeText(this, "someone just won but idk who", Toast.LENGTH_LONG).show();
+            gameOver = true;
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage(potentialWinner + " " + getString(R.string.wonDialog));
             builder.setNeutralButton(potentialLoser + " " + getString(R.string.lostButton), new DialogInterface.OnClickListener(){
@@ -239,7 +242,7 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
     }
 
     void checkForTie(){
-        if (turnsTaken >= 9){
+        if (turnsTaken >= 9 && !gameOver){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage(getString(R.string.tie));
             builder.setNeutralButton(getString(R.string.tieDialog), new DialogInterface.OnClickListener(){
