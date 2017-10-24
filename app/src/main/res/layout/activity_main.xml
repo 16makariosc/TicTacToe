@@ -7,7 +7,8 @@
     android:background="#FFFFFF"
     android:orientation="vertical"
     android:gravity="center_horizontal|bottom"
-    tools:context="com.cis195calculator.maki.tictactoe.MainActivity">
+    tools:context="com.cis195calculator.maki.tictactoe.MainActivity"
+    android:id="@+id/mainMenu">
 
     <Button
         android:id="@+id/start_game"

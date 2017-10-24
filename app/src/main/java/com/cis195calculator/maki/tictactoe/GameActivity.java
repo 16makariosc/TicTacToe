@@ -208,8 +208,12 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
                 p1WinTable.put(winRowId, p1WinTable.get(winRowId) + 1);
             }
             copy = p1WinTable;
+
             potentialWinner = p1.getText().toString();
+            potentialWinner = potentialWinner.equalsIgnoreCase("") ? p1.getHint().toString() : potentialWinner;
+
             potentialLoser = p2.getText().toString();
+            potentialLoser = potentialLoser.equalsIgnoreCase("") ? p2.getHint().toString() : potentialLoser;
 
         } else {
             if (p2WinTable.get(winRowId) == null) {
@@ -218,8 +222,12 @@ public class GameActivity extends FragmentActivity implements DialogInterface.On
                 p2WinTable.put(winRowId, p2WinTable.get(winRowId) + 1);
             }
             copy = p2WinTable;
+
             potentialWinner = p2.getText().toString();
+            potentialWinner = potentialWinner.equalsIgnoreCase("") ? p2.getHint().toString() : potentialWinner;
+
             potentialLoser = p1.getText().toString();
+            potentialLoser = potentialLoser.equalsIgnoreCase("") ? p1.getHint().toString() : potentialLoser;
         }
 
         if (copy.get(winRowId) >= 3) {

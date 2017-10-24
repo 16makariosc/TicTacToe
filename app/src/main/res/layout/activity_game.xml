@@ -14,11 +14,11 @@
         android:layout_above="@+id/playerNames">
 
         <GridLayout
-            android:layout_width="399px"
-            android:layout_height="399px"
+            android:layout_width="466px"
+            android:layout_height="466px"
             android:adjustViewBounds="true"
 
-            android:layout_margin="10dp"
+            android:layout_margin="7dp"
             android:background="@color/black"
 
             android:rowCount="3"
@@ -26,77 +26,95 @@
 
             <ImageView
                 android:id="@+id/i11"
-                android:layout_height="133px"
-                android:layout_width="133px"
+                android:layout_height="154px"
+                android:layout_width="154px"
+                android:padding="10px"
                 android:layout_marginRight="2px"
                 android:layout_marginBottom="2px"
+                android:adjustViewBounds="true"
                 android:background="@color/white"/>
 
             <ImageView
                 android:id="@+id/i21"
-                android:layout_height="133px"
-                android:layout_width="133px"
+                android:layout_height="154px"
+                android:layout_width="154px"
+                android:padding="10px"
                 android:layout_marginRight="2px"
                 android:layout_marginLeft="2px"
                 android:layout_marginBottom="2px"
+                android:adjustViewBounds="true"
                 android:background="@color/white"/>
 
             <ImageView
                 android:id="@+id/i31"
-                android:layout_height="133px"
-                android:layout_width="133px"
+                android:layout_height="154px"
+                android:layout_width="154px"
+                android:padding="10px"
                 android:layout_marginLeft="2px"
                 android:layout_marginBottom="2px"
+                android:adjustViewBounds="true"
                 android:background="@color/white"/>
 
             <ImageView
                 android:id="@+id/i12"
-                android:layout_height="133px"
-                android:layout_width="133px"
+                android:layout_height="154px"
+                android:layout_width="154px"
+                android:padding="10px"
                 android:layout_marginTop="2px"
                 android:layout_marginRight="2px"
                 android:layout_marginBottom="2px"
+                android:adjustViewBounds="true"
                 android:background="@color/white"/>
 
             <ImageView
                 android:id="@+id/i22"
-                android:layout_height="133px"
-                android:layout_width="133px"
+                android:layout_height="154px"
+                android:layout_width="154px"
+                android:padding="10px"
                 android:layout_margin="2px"
+                android:adjustViewBounds="true"
                 android:background="@color/white"/>
 
             <ImageView
                 android:id="@+id/i32"
-                android:layout_height="133px"
-                android:layout_width="133px"
+                android:layout_height="154px"
+                android:layout_width="154px"
+                android:padding="10px"
                 android:layout_marginLeft="2px"
                 android:layout_marginTop="2px"
                 android:layout_marginBottom="2px"
+                android:adjustViewBounds="true"
                 android:background="@color/white"/>
 
             <ImageView
                 android:id="@+id/i13"
-                android:layout_height="133px"
-                android:layout_width="133px"
+                android:layout_height="154px"
+                android:layout_width="154px"
+                android:padding="10px"
                 android:layout_marginTop="2px"
                 android:layout_marginRight="2px"
+                android:adjustViewBounds="true"
                 android:background="@color/white"/>
 
             <ImageView
                 android:id="@+id/i23"
-                android:layout_height="133px"
-                android:layout_width="133px"
+                android:layout_height="154px"
+                android:layout_width="154px"
+                android:padding="10px"
                 android:layout_marginTop="2px"
                 android:layout_marginLeft="2px"
                 android:layout_marginRight="2px"
+                android:adjustViewBounds="true"
                 android:background="@color/white"/>
 
             <ImageView
                 android:id="@+id/i33"
-                android:layout_height="133px"
-                android:layout_width="133px"
+                android:layout_height="154px"
+                android:layout_width="154px"
+                android:padding="10px"
                 android:layout_marginTop="2px"
                 android:layout_marginLeft="2px"
+                android:adjustViewBounds="true"
                 android:background="@color/white"/>
 
         </GridLayout>
